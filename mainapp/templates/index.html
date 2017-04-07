@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css '%}" />
+		<title>Fact You</title>
+	</head>
+	<body>
+		<h1>Fact You</h1>
+		<h2>Did you know that being handsome is hard for me?</h2>
+		{% for comments in comments %}	
+			<p>{{ comments.name }} {{ comments.age }} years old</p>
+			{% if comments.age > 18 %}					
+					<p>{{ comments.says }}</p>
+				{% else %}
+					<p>Minor is not allowed</p>
+			{% endif %}
+		{% endfor %}
+	</body>
+</html>
